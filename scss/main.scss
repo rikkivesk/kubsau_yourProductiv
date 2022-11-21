@@ -1,0 +1,417 @@
+body{
+    // background:linear-gradient(90deg ,#ec2c2c,#d29e62,#e9993d );
+    background: #B0C4B1;
+    font-family: Poppins, sans-serif
+    
+}
+.container{
+    max-width: 465px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+.pomidoro-count{
+    text-align: center;
+    padding: 10px;
+}
+.header{
+    &-flex{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+    }
+    &-coins{
+        display: flex;
+        align-items: center;
+        margin-top: 6px;
+        &-count{
+            margin-right: 4px;
+            font-weight: 700;
+        }
+        &-span{
+            display: block;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+        }
+    }
+}
+.app{
+    &-sliders{
+        display: flex;
+        justify-content: center;
+    }
+    &-slider{
+        padding: 16px;
+        position: relative;
+        // background-color: rgb(39, 189, 84);
+        // background: #CCE3DE;
+        border-radius: 10px;
+        &-span{
+            display: block;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        &-time{
+            // padding: 32px;
+            // background-color: rgb(87, 189, 189);
+            background: #F7E1D7;
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            margin: 0 auto;
+        }
+        &-down{
+            display: flex;
+            justify-content: space-between;
+            margin: 16px;
+            &-btns{
+                margin-right: 24px;
+            }
+        }
+        &-popup{
+            opacity: 0;
+            visibility: hidden;
+            // transition: .1s ease;
+            display: flex;
+            justify-content: center;
+            &.--active{
+                opacity: 1;
+                visibility: visible;
+            }
+           &-body{
+            background-color: #fff;
+            position: fixed;
+            z-index: 140;
+            max-width: 280px;
+            padding: 5px;
+            top: 10%;
+            border-radius: 10px;
+            &-close {
+                cursor: pointer;
+                font-weight: 700;
+                text-align: right;
+                margin: 5px 5px 0 0;
+            }
+            &-h{
+                text-align: center;
+                font-weight: 700;
+                font-size: 18px;
+            }
+            &-text{
+                text-align: justify;
+                padding: 15px;
+            }
+           }
+            &-bg{
+                z-index: 20;
+                position: fixed;
+                top: 0;
+                left:0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+}
+.slick{
+    &-list{
+        width: 300px;
+    }
+    &-slide{
+        margin-right: 70px;
+    }
+    &-next{
+        margin-right: 30px;
+    }
+    &-prev{
+        margin-left: 30px;
+    }
+    &-dots{
+        & li button::before {
+            width: 32px;
+            height: 32px;
+            color: #D9D9D9;
+        }
+        & li.slick-active button:before {
+            color: #3348cf;
+            opacity: 0.75;
+        }
+    }
+}
+.btn-start, .btn-stop, .btn-reset{
+    padding: 8px;
+    // background: #4676D7;
+    background: #EDAFB8;
+    border: none;
+    font-size: 16px;
+}
+.content{
+    display: none;
+    &.--active{
+        display: block;
+    }
+}
+.item{
+    &.--active {
+        border-bottom: 2px solid blue;
+    }
+}
+
+
+.burger{
+    display: block;
+    width: 32px;
+    // height: 32px;
+    cursor: pointer;
+    position: relative;
+    &-span,&:after,&:before{
+        cursor: pointer;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: rgb(0, 0, 0);
+        transition: all .3s ease;
+    }
+    &-span{
+        top: 20px;
+    }
+    &:after, &:before{
+        content: '';
+    }
+    &:after{
+        top: 24px;
+    }
+    &:before{
+        bottom: 16px;
+    }
+    &.--active {
+        & span{
+            opacity: 0;
+        }
+        &::after{
+            transform: rotate(-45deg);
+            bottom: 24px;
+        
+        }
+        &::before{
+            transform: rotate(45deg);
+            top: 24px;
+        
+        }
+
+    }
+}
+.flex-button{
+    display: inline;
+    width: 100%;
+}
+input{
+    border:none;
+    &[type='text']{
+        width: 50%;
+        padding: 5px 10px;
+        outline: none;
+        font-size: 1.2rem;
+        margin-right: -4px;
+        color: rgb(0, 0, 0);
+        border: none;
+        background-color: #ffffff;
+        cursor:pointer;
+        &:disabled{
+            cursor:default;
+            color: #111;
+            // background-color: rgb(37, 35, 154);
+            background: #DEDBD2;
+        }
+    }
+    &[type='button']{
+        padding: 6px;
+        font-size: 1.04rem;
+        color:white;
+        margin: 0 -3px;
+        &:active{
+            transform: scale(.94);
+        }
+    }
+}
+#add-btn{
+    margin-right: -4px;
+    background-color: #e9adad;
+}
+#del-btn{
+    background-color: #540a0a;
+}
+.new-tasks{
+    margin: 0px auto;
+    max-height: 115px;
+    overflow-y: auto;
+}
+.update-task{
+    margin-left: 10px;
+    background-color: #6497ef;
+}
+.rename-task{
+    background-color: #e9adad;
+}
+.del-task{
+    background-color: #540a0a;
+}
+.ready-task{
+    background-color: rgb(83, 174, 93);
+}
+.task{
+    width: 91%;
+    margin: 5px auto;
+    display: flex;
+    justify-content: center;   
+    &-input{
+        margin: 10px auto 5px;
+        text-align: center;
+        
+    }
+}
+.footer{
+    position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 40px;
+    &-flexs{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &-flex{
+        &-span{
+            display: block;
+            height: 32px;
+            width: 32px;
+        }
+    }   
+}
+@media (max-width: 425px) {
+    .header-title{
+        font-size: 24px;
+    }
+    .app-slider-time{
+        width: 150px;
+        height: 150px;
+    }
+    .slick{
+        &-next{
+            margin-right: 20px;
+        }
+        &-prev{
+            margin-left: 20px;
+        }
+    }
+    .new-tasks{
+        max-height: 155px;
+    }
+}
+@media (max-width: 375px){
+    .header{
+        &-title{
+            font-size: 22px;
+        }
+        &-coins{
+            &-span{
+                width: 26px;
+                height: 26px;
+            }
+        }
+    }
+    .app{
+        &-sliders{
+            display: flex;
+            justify-content: center;
+        }
+        &-slider{
+            &-time{
+                width: 130px;
+                height: 130px;
+                font-size: 14px;
+            }
+            &-popup{
+               &-body{
+                max-width: 240px;
+                &-h{
+                    font-size: 16px;
+                }
+                &-text{
+                    font-size: 14px;
+                    padding: 12px;
+                }
+               }
+            }
+        }
+    }
+    .btn-start, .btn-stop, .btn-reset{
+        padding: 4px;
+        font-size: 14px;
+    }
+    .burger{
+        &-span{
+            top: 16px;
+        }
+        &:after, &:before{
+            content: '';
+        }
+        &:after{
+            top: 22px;
+        }
+        &:before{
+            bottom: 12px;
+        }
+    }
+    input{
+        &[type='text']{
+            padding: 5px;
+            font-size: 1.05rem;
+        }
+        &[type='button']{
+            padding: 4px;
+            font-size: 1.00rem;
+            &:active{
+                transform: scale(.94);
+            }
+        }
+    }
+    .new-tasks{
+        max-height: 207px;
+    }
+    .update-task{
+        max-width: 28px;
+    }
+    .rename-task{
+        background-color: #e9adad;
+        max-width: 28px;
+    }
+    .del-task{
+        background-color: #540a0a;
+        max-width: 28px;
+    }
+    .task{
+        width: 95%;
+        margin: 5px auto; 
+        &-input{
+            margin: 10px auto 5px;
+        }
+    }
+    .slick{
+        &-next{
+            margin-right: 10px;
+        }
+        &-prev{
+            margin-left: 10px;
+        }
+    }
+}

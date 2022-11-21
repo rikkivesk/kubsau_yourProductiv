@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+input:focus {
+	outline: 0 none;
+}
+
+textarea:focus {
+	outline: 0 none;
+}
+.Button:focus {
+	outline: 0 none;
+}
