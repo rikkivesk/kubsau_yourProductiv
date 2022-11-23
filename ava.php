@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once 'vendor/connect.php';
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -50,12 +51,29 @@ session_start();
             </div>
         </div>
     </header>
-    <form>
-        <img src="<?= $_SESSION['user']['avatar'] ?>" width="200" alt="">
-        <h2 style="margin: 10px 0;"><?= $_SESSION['user']['login'] ?></h2>
-        <a href="#"><?= $_SESSION['user']['email'] ?></a>
-        <a href="vendor/logout.php" class="logout">Выход</a>
-    </form>
+    <main>
+        <form>
+            <img src="<?= $_SESSION['user']['avatar'] ?>" width="200" alt="">
+            <h2 style="margin: 10px 0;"><?= $_SESSION['user']['login'] ?></h2>
+            <a href="#"><?= $_SESSION['user']['email'] ?></a>
+            <a href="vendor/logout.php" class="logout">Выход</a>
+        </form>
+        <div class="rating container" style="text-align: center">
+            <h2 class="title">Рейтинг пользователей</h2>
+            <?php
+            // вывод пользователей до 10 штук
+            $result = mysqli_query($connect, "SELECT login, avatar FROM `users` LIMIT 5");
+            $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+            foreach ($rows as $row) {
+                ?>
+                <img class="loginDb"src="<?=$row['avatar']?>"><?=$row['login'] . "<br>";
+
+            }
+
+            ?>
+        </div>
+    </main>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-flexs">
