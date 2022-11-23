@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Авторизация и регистрация</title>
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="./scss/register.css">
 </head>
 <body>
 <?php
@@ -36,7 +36,7 @@
         <input type="password" name="password" placeholder="Введите пароль">
         <label>Подтверждение пароля</label>
         <input type="password" name="password_confirm" placeholder="Подтвердите пароль">
-        <button type="submit">Войти</button>
+        <button type="submit">Зарегистрироваться</button>
         <p>
             У вас уже есть аккаунт? - <a href="auth.php">авторизируйтесь</a>!
         </p>

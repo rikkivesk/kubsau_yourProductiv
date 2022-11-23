@@ -9,6 +9,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <title>Твой продуктив</title>
     <link rel="stylesheet" href="./scss/reset.css">
+    <link rel="stylesheet" href="./scss/register.css">
     <link rel="stylesheet" href="./scss/main.css">
 </head>
 <body>
@@ -51,7 +52,7 @@ session_start();
     </header>
     <form>
         <img src="<?= $_SESSION['user']['avatar'] ?>" width="200" alt="">
-        <h2 style="margin: 10px 0;"><?= $_SESSION['user']['full_name'] ?></h2>
+        <h2 style="margin: 10px 0;"><?= $_SESSION['user']['login'] ?></h2>
         <a href="#"><?= $_SESSION['user']['email'] ?></a>
         <a href="vendor/logout.php" class="logout">Выход</a>
     </form>

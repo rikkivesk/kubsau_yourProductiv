@@ -16,6 +16,7 @@ let t
 let t2
 let pomidor = 0
 btnReset.disabled = true
+btnStop2.disabled = true;
 function tick(){
     if (pomidor < 7){
         sec--
