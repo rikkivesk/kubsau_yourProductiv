@@ -52,26 +52,29 @@ require_once 'vendor/connect.php';
         </div>
     </header>
     <main>
-        <form>
-            <img src="<?= $_SESSION['user']['avatar'] ?>" width="200" alt="">
+        <form class="main-form">
+            <img class="main-form-img" src="<?= $_SESSION['user']['avatar'] ?>" width="200" alt="">
             <h2 style="margin: 10px 0;"><?= $_SESSION['user']['login'] ?></h2>
             <a href="#"><?= $_SESSION['user']['email'] ?></a>
             <a href="vendor/logout.php" class="logout">Выход</a>
         </form>
-        <div class="rating container" style="text-align: center">
-            <h2 class="title">Рейтинг пользователей</h2>
+        <div class="rating">
+            <h2 class="rating-title">Рейтинг пользователей</h2>
             <?php
             // вывод пользователей до 10 штук
-            $result = mysqli_query($connect, "SELECT login, avatar FROM `users` LIMIT 5");
+            $result = mysqli_query($connect, "SELECT login, avatar FROM `users` LIMIT 3");
             $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
             foreach ($rows as $row) {
                 ?>
-                <img class="loginDb"src="<?=$row['avatar']?>"><?=$row['login'] . "<br>";
+                <img class="rating-img"src="<?=$row['avatar']?>"><?=$row['login'];
 
             }
 
             ?>
         </div>
+        <div class="rating-more">
+                Ещё
+            </div>
     </main>
 
     <footer class="footer">
@@ -138,6 +141,15 @@ require_once 'vendor/connect.php';
             </div>
         </div>
     </footer>
+    <script>
+        //Кнопка еще
+        const ratingMore = document.querySelector('.rating-more')
+        ratingMore.onclick = function(){
+            ratingMore.parentNode.querySelector('.rating').classList.add('--active')
+            <?php $result = mysqli_query($connect, "SELECT login, avatar FROM `users` LIMIT 5");?>
+            
+        }
+    </script>
     <script src="./js/tabs.js"></script>
     <script src="./js/timer.js"></script>
     <script src="./js/list.js"></script>

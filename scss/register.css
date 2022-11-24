@@ -9,7 +9,7 @@ form {
   border: 2px solid #111;
   border-radius: 8px;
   width: 300px;
-  margin: 32px auto;
+  margin: 16px auto;
   display: flex;
   flex-direction: column;
   padding: 16px;
@@ -27,15 +27,46 @@ form button {
   font-size: 1.04rem;
 }
 
-img {
+a {
+  text-decoration: none;
+  color: #111;
+}
+
+.main-form-img {
   border-radius: 50%;
-  width: 250px;
-  height: 250px;
+  width: 150px;
+  height: 150px;
   margin: 0 auto;
   border: 1px solid rgb(175, 20, 20);
 }
 
-a {
-  text-decoration: none;
-  color: #111;
+.rating {
+  border: 2px solid #111;
+  border-radius: 8px;
+  width: 300px;
+  margin: 16px auto;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  max-height: 300px;
+  overflow: hidden;
+}
+.rating.--active {
+  overflow-y: scroll;
+}
+.rating-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+.rating-title {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+.rating-more {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
 }/*# sourceMappingURL=register.css.map */
