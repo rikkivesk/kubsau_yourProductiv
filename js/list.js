@@ -13,6 +13,7 @@ const taskAlert = document.querySelector('.input-alert') //поле вывода
 const countMoney = document.querySelector('.header-coins-count')
 let numberMoney = 0
 
+
 delTaskBtn.addEventListener('click', () => { //функция удаления
     addInput.value = '' // обнуляем поле ввода
 })
@@ -28,6 +29,8 @@ addBtn.addEventListener('click', (e)=> { // функция добавления 
         updateTodo()
         taskAlert.textContent = ''        
     }
+
+
 })
 function addTodo(todo){ //функция создания задачи
     let todoTask  = ` 
@@ -42,6 +45,15 @@ function addTodo(todo){ //функция создания задачи
                 </div>
                 ` 
     newTasks.innerHTML += todoTask // добавляем в поле новых задач
+    /*$.ajax({
+        url: 'vendor/todo.php',
+        method: 'post',
+        dataType: 'html',
+        data: {numberMoney: 'numberMoney'},
+        success: function(data){
+            alert(data);
+        }
+    });*/
 }
 function updateTodo(){ //функция изменения задачи
     let task  = document.querySelectorAll('.task') //берем массив с заданиями

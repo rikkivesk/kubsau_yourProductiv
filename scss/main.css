@@ -433,4 +433,12 @@ input[type=button]:active {
   .slick-prev {
     margin-left: 10px;
   }
+  .shop_category_link {
+    display: inline-block;
+    min-height: 50px;
+    width: 100%;
+    border: #111111 solid 1px;
+    border-radius: 5%;
+    margin-bottom: 30px;
+  }
 }/*# sourceMappingURL=main.css.map */

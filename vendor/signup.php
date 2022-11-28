@@ -8,7 +8,7 @@
     $email = $_POST['email'];
     $password = $_POST['password'];
     $password_confirm = $_POST['password_confirm'];
-
+    $balls = $_POST['balls'];
     if ($password === $password_confirm) {
 
         $path = 'uploads/' . time() . $_FILES['avatar']['name'];

@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    require_once 'vendor/connect.php';
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -25,7 +29,7 @@
                     Твой продуктив
                 </h1>
                 <div class="header-coins">
-                    <p class="header-coins-count">0</p>
+                    <p class="header-coins-count"><?= $_SESSION['user']['balls']?></p>
                     <span class="header-coins-span">
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 463 463" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 463 463">
                             <g>
@@ -152,7 +156,7 @@
         <div class="container">
             <div class="footer-flexs">
                 <div class="footer-flex item">
-                    <a href="#" class="footer-flex-link">
+                    <a href="shop.php" class="footer-flex-link">
                         <div class="footer-flex-span">
                             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                             viewBox="0 0 489.4 489.4" style="enable-background:new 0 0 489.4 489.4;" xml:space="preserve">

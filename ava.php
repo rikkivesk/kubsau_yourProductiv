@@ -28,7 +28,7 @@ require_once 'vendor/connect.php';
                     Твой продуктив
                 </h1>
                 <div class="header-coins">
-                    <p class="header-coins-count">100</p>
+                    <p class="header-coins-count"><?= $_SESSION['user']['balls']?></p>
                     <span class="header-coins-span">
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 463 463" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 463 463">
                             <g>
@@ -69,11 +69,11 @@ require_once 'vendor/connect.php';
             <h2 class="rating-title">Рейтинг пользователей</h2>
             <?php
             // вывод пользователей до 10 штук
-            $result = mysqli_query($connect, "SELECT login, avatar FROM `users` LIMIT 3");
+            $result = mysqli_query($connect, "SELECT login, avatar, balls FROM `users` LIMIT 3");
             $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
             foreach ($rows as $row) {
                 ?>
-                <img class="rating-img"src="<?=$row['avatar']?>"><?=$row['login'];
+                <img class="rating-img"src="<?=$row['avatar']?>"> <?=$row['login']. " баллов:" . $row['balls'];
 
             }
 
