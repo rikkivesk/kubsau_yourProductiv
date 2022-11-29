@@ -14,22 +14,22 @@ require_once 'vendor/connect.php';
     <link rel="stylesheet" href="./scss/main.css">
 </head>
 <body>
-    <div class="preloader">
-        <svg class="preloader__image" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-            <path fill="currentColor"
-            d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z">
-            </path>
-        </svg>
-    </div>
-    <header class="header">
-        <div class="container">
-            <div class="header-flex">
-                <h1 class="header-title">
-                    Твой продуктив
-                </h1>
-                <div class="header-coins">
-                    <p class="header-coins-count"><?= $_SESSION['user']['balls']?></p>
-                    <span class="header-coins-span">
+<div class="preloader">
+    <svg class="preloader__image" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path fill="currentColor"
+              d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z">
+        </path>
+    </svg>
+</div>
+<header class="header">
+    <div class="container">
+        <div class="header-flex">
+            <h1 class="header-title">
+                Твой продуктив
+            </h1>
+            <div class="header-coins">
+                <p class="header-coins-count"></p>
+                <span class="header-coins-span">
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 463 463" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 463 463">
                             <g>
                               <path d="M395.195,67.805C351.471,24.08,293.336,0,231.5,0S111.529,24.08,67.805,67.805S0,169.664,0,231.5   s24.08,119.971,67.805,163.695S169.664,463,231.5,463s119.971-24.08,163.695-67.805S463,293.336,463,231.5   S438.92,111.529,395.195,67.805z M384.589,384.589C343.697,425.48,289.329,448,231.5,448s-112.197-22.52-153.089-63.411   C37.52,343.697,15,289.329,15,231.5S37.52,119.303,78.411,78.411C119.303,37.52,173.671,15,231.5,15s112.197,22.52,153.089,63.411   C425.48,119.303,448,173.671,448,231.5S425.48,343.697,384.589,384.589z"/>
@@ -54,44 +54,37 @@ require_once 'vendor/connect.php';
                             </g>
                           </svg>
                     </span>
-                </div>
             </div>
         </div>
-    </header>
-    <main>
-        <form class="main-form">
-            <img class="main-form-img" src="<?= $_SESSION['user']['avatar'] ?>" width="200" alt="">
-            <h2 style="margin: 10px 0;"><?= $_SESSION['user']['login'] ?></h2>
-            <a href="#"><?= $_SESSION['user']['email'] ?></a>
-            <a href="vendor/logout.php" class="logout">Выход</a>
-        </form>
-        <div class="rating">
-            <h2 class="rating-title">Рейтинг пользователей</h2>
-            <?php
-            // вывод пользователей до 10 штук
-            $result = mysqli_query($connect, "SELECT id, login, avatar, balls FROM `users` LIMIT 3");
-            $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
-            foreach ($rows as $row) {
-                ?>
-                <img class="rating-img"src="<?=$row['avatar']?>"> <a href="profile.php?id=<?= $row['id']?>"><?=$row['login']. " баллов:" . $row['balls']?></a>;
-            <?php
-            }
+    </div>
+</header>
+<main>
+    <form class="main-form">
+        <?php
+        $id = $_GET['id'];
+        $result = mysqli_query($connect, "SELECT  login, avatar FROM `users` where id = $id");
+        $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        ?>
+        <?php
+        foreach ($rows as $row){
+        ?>
+        <div class="shop_category">
+            <img class="main-form-img" src="<?=$row['avatar']?>">
+            <p><?= $row['login']?></p>
+        </div><?php
+        } ?>
+    </form>
 
-            ?>
-        </div>
-        <div class="rating-more">
-                Ещё
-            </div>
-    </main>
+</main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-flexs">
-                <div class="footer-flex item">
-                    <a href="shop.php" class="footer-flex-link">
-                        <div class="footer-flex-span">
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                            viewBox="0 0 489.4 489.4" style="enable-background:new 0 0 489.4 489.4;" xml:space="preserve">
+<footer class="footer">
+    <div class="container">
+        <div class="footer-flexs">
+            <div class="footer-flex item">
+                <a href="#" class="footer-flex-link">
+                    <div class="footer-flex-span">
+                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             viewBox="0 0 489.4 489.4" style="enable-background:new 0 0 489.4 489.4;" xml:space="preserve">
                             <g>
                                 <g>
                                     <path d="M347.7,263.75h-66.5c-18.2,0-33,14.8-33,33v51c0,18.2,14.8,33,33,33h66.5c18.2,0,33-14.8,33-33v-51
@@ -110,19 +103,19 @@ require_once 'vendor/connect.php';
                                 </g>
                             </g>
                             </svg>
-                        </div>
-                    </a>
-                </div>
-                <div class="footer-flex item">
-                    <a href="index.php" class="footer-flex-link">
-                        main
-                    </a>
-                </div>
-                <div class="footer-flex item --active">
-                    <a href="ava.php" class="footer-flex-link">
+                    </div>
+                </a>
+            </div>
+            <div class="footer-flex item">
+                <a href="index.php" class="footer-flex-link">
+                    main
+                </a>
+            </div>
+            <div class="footer-flex item --active">
+                <a href="ava.html" class="footer-flex-link">
                         <span class="footer-flex-span">
                             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                viewBox="0 0 482.9 482.9" style="enable-background:new 0 0 482.9 482.9;" xml:space="preserve">
+                                 viewBox="0 0 482.9 482.9" style="enable-background:new 0 0 482.9 482.9;" xml:space="preserve">
                             <g>
                                 <g>
                                     <path d="M239.7,260.2c0.5,0,1,0,1.6,0c0.2,0,0.4,0,0.6,0c0.3,0,0.7,0,1,0c29.3-0.5,53-10.8,70.5-30.5
@@ -143,24 +136,29 @@ require_once 'vendor/connect.php';
                             </g>
                             </svg>
                         </span>
-                    </a>
-                </div>
+                </a>
             </div>
         </div>
-    </footer>
-    <script>
-        //Кнопка еще
-        const ratingMore = document.querySelector('.rating-more')
-        ratingMore.onclick = function(){
-            ratingMore.parentNode.querySelector('.rating').classList.add('--active')
-            <?php $result = mysqli_query($connect, "SELECT login, avatar FROM `users` LIMIT 5");?>
-            
-        }
-    </script>
-    <script src="./js/preload.js"></script>
-    <script src="./js/tabs.js"></script>
-    <script src="./js/timer.js"></script>
-    <script src="./js/list.js"></script>
-    <script src="./js/main.js"></script>
+    </div>
+</footer>
+<script>
+    //Кнопка еще
+    /*
+    const ratingMore = document.querySelector('.rating-more')
+    ratingMore.onclick = function(){
+        ratingMore.parentNode.querySelector('.rating').classList.add('--active')
+
+
+
+
+    }*/
+
+
+</script>
+<script src="./js/preload.js"></script>
+<script src="./js/tabs.js"></script>
+<script src="./js/timer.js"></script>
+<script src="./js/list.js"></script>
+<script src="./js/main.js"></script>
 </body>
 </html>
