@@ -1,0 +1,25 @@
+.shop{
+    &-category{
+        border: 2px solid #111;
+        border-radius: 10px;
+        &:not(last-child){
+            margin-top: 32px;
+        }
+        &-link{
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            padding: 16px;
+            color: #111;
+            font-weight: bold;
+        }
+        &-item{
+            padding: 16px;
+            border: 2px solid #111;
+            border-radius: 10px;
+            &:not(last-child){
+                margin-top: 32px;
+            }
+        }
+    }
+}

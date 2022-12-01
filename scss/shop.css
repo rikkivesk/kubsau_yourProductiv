@@ -1,0 +1,23 @@
+.shop-category {
+  border: 2px solid #111;
+  border-radius: 10px;
+}
+.shop-category:not(last-child) {
+  margin-top: 32px;
+}
+.shop-category-link {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  padding: 16px;
+  color: #111;
+  font-weight: bold;
+}
+.shop-category-item {
+  padding: 16px;
+  border: 2px solid #111;
+  border-radius: 10px;
+}
+.shop-category-item:not(last-child) {
+  margin-top: 32px;
+}/*# sourceMappingURL=shop.css.map */

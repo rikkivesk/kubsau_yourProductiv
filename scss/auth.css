@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+body {
+  background: #B0C4B1;
+  font-family: "Ubuntu", sans-serif;
+  margin: 0 auto;
+}
+
+form {
+  border: 2px solid #111;
+  border-radius: 8px;
+  width: 260px;
+  margin: 32px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding: 8px;
+}
+form label {
+  margin: 8px 0 16px 0;
+}
+form input {
+  padding: 6px;
+  font-size: 1.04rem;
+  color: #111;
+}
+form button {
+  padding: 6px;
+  font-size: 1.04rem;
+}
+
+a {
+  text-decoration: none;
+  color: #111;
+}
+
+.main-form-img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  border: 1px solid rgb(175, 20, 20);
+}/*# sourceMappingURL=auth.css.map */

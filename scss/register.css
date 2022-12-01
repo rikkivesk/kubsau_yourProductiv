@@ -5,24 +5,23 @@ body {
   margin: 0 auto;
 }
 
-form {
+.form-reg {
   border: 2px solid #111;
   border-radius: 8px;
-  width: 300px;
-  margin: 16px auto;
+  width: 1300px;
   display: flex;
   flex-direction: column;
   padding: 16px;
 }
-form label {
+.form-reg label {
   margin: 8px 0 16px 0;
 }
-form input {
+.form-reg input {
   padding: 6px;
   font-size: 1.04rem;
   color: #111;
 }
-form button {
+.form-reg button {
   padding: 6px;
   font-size: 1.04rem;
 }

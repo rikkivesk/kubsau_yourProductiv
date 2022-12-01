@@ -11,8 +11,7 @@ require_once 'vendor/connect.php';
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <title>Категории</title>
     <link rel="stylesheet" href="./scss/reset.css">
-    <link rel="stylesheet" href="./plugins/slick-1.8.1/slick/slick.css">
-    <link rel="stylesheet" href="./plugins/slick-1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="./scss/shop.css">
     <link rel="stylesheet" href="./scss/main.css">
 </head>
 <body>
@@ -29,9 +28,12 @@ require_once 'vendor/connect.php';
         $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
         foreach ($rows as $row){
             ?>
-            <div class="shop_category">
-                <p><a href="shop_item.php?id=<?= $row['id']?>" class="shop_category_link"><?= $row['name']?></a> </p>
-            </div><?php
+            <div class="shop">
+                <div class="shop-category">
+                    <a href="shop_item.php?id=<?= $row['id']?>" class="shop-category-link"><?= $row['name']?></a>
+                </div>
+            </div>
+            <?php
         } ?>
 
     </div>
