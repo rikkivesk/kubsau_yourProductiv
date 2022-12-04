@@ -6,3 +6,4 @@ require_once 'connect.php';
 $class_item = $_GET['class'];
 $id = $_SESSION['user']['id'];
 mysqli_query($connect, "update users set classes='$class_item' where id = '$id'");
+header('Location: ../index.php');
