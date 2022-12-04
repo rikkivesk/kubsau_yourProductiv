@@ -11,6 +11,7 @@ require_once 'vendor/connect.php';
     <title>Твой продуктив</title>
     <link rel="stylesheet" href="./scss/reset.css">
     <link rel="stylesheet" href="./scss/ava.css">
+    <link rel="stylesheet" href="./scss/shop.css">
     <link rel="stylesheet" href="./scss/main.css">
 </head>
 <body>
@@ -58,12 +59,11 @@ require_once 'vendor/connect.php';
             </div>
         </div>
     </header>
-    <main class="<?= $_SESSION['user']['classes']?>">
-        <form class="main-form">
-            <img class="main-form-img" src="<?= $_SESSION['user']['avatar'] ?>" width="200" alt="">
+    <main>
+        <form class="owner <?= $_SESSION['user']['classes']?>">
+            <img class="owner-img" src="<?= $_SESSION['user']['avatar'] ?>" alt="">
             <h2 style="margin: 10px 0;"><?= $_SESSION['user']['login'] ?></h2>
-            <a href="#"><?= $_SESSION['user']['email'] ?></a>
-            <?= $_SESSION['user']['classes']?>
+            <a href="#" class="owner-mail"><?= $_SESSION['user']['email'] ?></a>
 
             <a href="vendor/logout.php" class="logout">Выход</a>
         </form>
@@ -75,7 +75,8 @@ require_once 'vendor/connect.php';
             $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
             foreach ($rows as $row) {
                 ?>
-                <img class="rating-img"src="<?=$row['avatar']?>"> <a href="profile.php?id=<?= $row['id']?>"><?=$row['login']. " баллов:" . $row['balls']?></a>;
+                <img class="rating-img" src="<?=$row['avatar']?>"> 
+                <a class="rating-link" href="profile.php?id=<?= $row['id']?>"><?=$row['login']. " баллов:" . $row['balls']?></a>
             <?php
             }
 

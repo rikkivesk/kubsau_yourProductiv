@@ -14,7 +14,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Авторизация и регистрация</title>
+    <title>Регистрация</title>
     <link rel="stylesheet" href="./scss/register.css">
 </head>
 <body>
@@ -41,7 +41,7 @@
         <input type="password" name="password_confirm" placeholder="Подтвердите пароль">
         <button type="submit">Зарегистрироваться</button>
         <p>
-            У вас уже есть аккаунт? - <a href="auth.php">авторизируйтесь</a>!
+            У вас уже есть аккаунт? - <a href="auth.php" class="form-reg-link">авторизируйтесь!</a>
         </p>
         <?php
             if ($_SESSION['message']) {

@@ -26,9 +26,9 @@ body {
 .form-reg button {
   padding: 6px;
   font-size: 1.04rem;
+  margin-top: 16px;
 }
-
-a {
+.form-reg-link {
+  color: rgb(54, 48, 134);
   text-decoration: none;
-  color: #111;
 }/*# sourceMappingURL=register.css.map */

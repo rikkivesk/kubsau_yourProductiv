@@ -25,7 +25,7 @@
 
     } else {
         $_SESSION['message'] = 'Не верный логин или пароль';
-        header('Location: ../register.php');
+        header('Location: ../auth.php');
     }
     ?>
 

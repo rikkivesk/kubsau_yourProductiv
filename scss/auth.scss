@@ -5,7 +5,7 @@ body{
     font-family: 'Ubuntu', sans-serif;
     margin: 0 auto;
 }
-form{
+.form-auth{
     border: 2px solid #111;
     border-radius: 8px;
     width: 260px;
@@ -25,22 +25,14 @@ form{
     button{
         padding: 6px;
         font-size: 1.04rem;
+    }
+    &-link{
+        color: rgb(54, 48, 134);
+        text-decoration: none;
+    }
+}
+.msg{
+    color: red;
 
-    }
-}
-a{
-    text-decoration: none;
-    color: #111;
-}
-.main{
-    &-form{
-        &-img{
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            margin: 0 auto;
-            border: 1px solid rgb(175, 20, 20); 
-        }
-    }
 }
 

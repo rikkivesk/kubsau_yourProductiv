@@ -10,7 +10,8 @@ require_once 'vendor/connect.php';
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <title>Твой продуктив</title>
     <link rel="stylesheet" href="./scss/reset.css">
-    <link rel="stylesheet" href="./scss/register.css">
+    <link rel="stylesheet" href="./scss/profile.css">
+    <link rel="stylesheet" href="./scss/shop.css">
     <link rel="stylesheet" href="./scss/main.css">
 </head>
 <body>
@@ -60,7 +61,7 @@ require_once 'vendor/connect.php';
 </header>
 <?php
 $id = $_GET['id'];
-$result = mysqli_query($connect, "SELECT  login, avatar, classes FROM `users` where id = $id");
+$result = mysqli_query($connect, "SELECT  login, avatar, classes, balls FROM `users` where id = $id");
 
 $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
 foreach ($rows as $row) {
@@ -71,9 +72,10 @@ foreach ($rows as $row) {
         <?php
         foreach ($rows as $row){
         ?>
-        <div class="shop_category">
-            <img class="main-form-img" src="<?=$row['avatar']?>">
-            <p><?= $row['login']?></p>
+        <div class="profile">
+            <img class="profile-img" src="<?=$row['avatar']?>">
+            <p class="profile-login"><?= $row['login']?></p>
+            <p class="profile-login">Количество баллов: <?= $row['balls']?></p>
         </div><?php
         } ?>
 

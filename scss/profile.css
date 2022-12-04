@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+body {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.profile {
+  max-width: 465px;
+  padding: 20px;
+  margin: 0 auto;
+}
+.profile-img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  border: 1px solid rgb(175, 20, 20);
+}
+.profile-login {
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 10px;
+}/*# sourceMappingURL=profile.css.map */

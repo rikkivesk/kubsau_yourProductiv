@@ -5,7 +5,7 @@ body {
   margin: 0 auto;
 }
 
-form {
+.form-auth {
   border: 2px solid #111;
   border-radius: 8px;
   width: 260px;
@@ -15,28 +15,23 @@ form {
   justify-content: start;
   padding: 8px;
 }
-form label {
+.form-auth label {
   margin: 8px 0 16px 0;
 }
-form input {
+.form-auth input {
   padding: 6px;
   font-size: 1.04rem;
   color: #111;
 }
-form button {
+.form-auth button {
   padding: 6px;
   font-size: 1.04rem;
 }
-
-a {
+.form-auth-link {
+  color: rgb(54, 48, 134);
   text-decoration: none;
-  color: #111;
 }
 
-.main-form-img {
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  margin: 0 auto;
-  border: 1px solid rgb(175, 20, 20);
+.msg {
+  color: red;
 }/*# sourceMappingURL=auth.css.map */

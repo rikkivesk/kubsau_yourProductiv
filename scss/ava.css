@@ -5,7 +5,7 @@ body {
   margin: 0 auto;
 }
 
-.main-form {
+.owner {
   border: 2px solid #111;
   border-radius: 8px;
   width: 260px;
@@ -15,12 +15,22 @@ body {
   justify-content: start;
   padding: 8px;
 }
-.main-form-img {
+.owner-img {
   border-radius: 50%;
   width: 150px;
   height: 150px;
   margin: 0 auto;
   border: 1px solid rgb(175, 20, 20);
+}
+.owner-mail {
+  text-decoration: none;
+  color: #111;
+  cursor: default;
+}
+
+.logout {
+  text-decoration: none;
+  color: #111;
 }
 
 .rating {
@@ -45,6 +55,11 @@ body {
 .rating-title {
   font-size: 20px;
   margin-bottom: 16px;
+}
+.rating-link {
+  text-decoration: none;
+  color: #111;
+  margin-bottom: 8px;
 }
 .rating-more {
   cursor: pointer;
