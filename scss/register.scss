@@ -5,14 +5,15 @@ body{
     font-family: 'Ubuntu', sans-serif;
     margin: 0 auto;
 }
-form{
+.form-reg{
     border: 2px solid #111;
     border-radius: 8px;
-    width: 300px;
+    width: 260px;
     margin: 16px auto;
     display: flex;
     flex-direction: column;
-    padding: 16px;
+    justify-content: start;
+    padding: 8px;
     label{
         margin: 8px 0 16px 0;
     }
@@ -31,45 +32,5 @@ a{
     text-decoration: none;
     color: #111;
 }
-.main{
-    &-form{
-        &-img{
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            margin: 0 auto;
-            border: 1px solid rgb(175, 20, 20); 
-        }
-    }
-}
-.rating{
-    border: 2px solid #111;
-    border-radius: 8px;
-    width: 300px;
-    margin: 16px auto;
-    display: flex;
-    flex-direction: column;
-    padding: 16px;
-    max-height: 300px;
-    // overflow-y:scroll;
-    overflow: hidden;
-    &.--active{
-        overflow-y:scroll;
-    }
-    &-img{
-        width: 64px;
-        height: 64px;
-        border-radius: 50%;
-    }
-    &-title{
-        font-size: 20px;
-        margin-bottom: 16px;
-    }
-    &-more{
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        font-size: 16px;
-        font-weight: bold;
-    }
-}
+
+

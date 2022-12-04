@@ -11,6 +11,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Авторизация и регистрация</title>
     <link rel="stylesheet" href="./scss/register.css">
 </head>
@@ -23,7 +26,7 @@
         если пользователь не зарегистрирован, покажи форму регистрации
     -->
 
-    <form action="vendor/signup.php" method="post" enctype="multipart/form-data">
+    <form class="form-reg" action="vendor/signup.php" method="post" enctype="multipart/form-data">
         <label>ФИО</label>
         <input type="text" name="full_name" placeholder="Введите свое полное имя">
         <label>Логин</label>

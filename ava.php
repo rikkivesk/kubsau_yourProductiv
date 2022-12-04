@@ -10,7 +10,7 @@ require_once 'vendor/connect.php';
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <title>Твой продуктив</title>
     <link rel="stylesheet" href="./scss/reset.css">
-    <link rel="stylesheet" href="./scss/register.css">
+    <link rel="stylesheet" href="./scss/ava.css">
     <link rel="stylesheet" href="./scss/main.css">
 </head>
 <body>
@@ -155,14 +155,7 @@ require_once 'vendor/connect.php';
         const ratingMore = document.querySelector('.rating-more')
         ratingMore.onclick = function(){
             ratingMore.parentNode.querySelector('.rating').classList.add('--active')
-            <?php
-            $result = mysqli_query($connect, "SELECT login, avatar FROM `users`");
-            $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
-            foreach ($rows as $row) {?>
-                <img class="rating-img" src="<?=$row['avatar']?>">
-                <a href="profile.php?id=<?= $row['id']?>"><?=$row['login']. " баллов:" . $row['balls']?></a>
-            <?php }?>
-
+            <?php $result = mysqli_query($connect, "SELECT login, avatar FROM `users` LIMIT 5");?>
             
         }
     </script>
