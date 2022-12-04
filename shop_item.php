@@ -27,8 +27,11 @@ require_once 'vendor/connect.php';
         $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
         foreach ($rows as $row){
             ?>
-            <div class="shop-category">
-                <a href="vendor/shopFunc.php?class=<?=$row['class'] ?>" class="shop-category-link"><p><?= $row['name_item']?> цена:  <?= $row['price']?></p></a>
+            <div class="shop-category <?=$row['class'] ?>">
+                <a href="vendor/shopFunc.php?class=<?=$row['class'] ?>" class="shop-category-link">
+                <p><?= $row['name_item']?></p>
+                <p>цена:  <?= $row['price']?></p>
+            </a>
             </div><?php
         }?>
 

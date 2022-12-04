@@ -24,30 +24,21 @@
 .shop-blue {
   background: rgb(78, 78, 187);
 }
+.shop-green {
+  background: rgb(32, 163, 122);
+}
+.shop-orange {
+  background: rgb(198, 94, 34);
+}
 .shop-red {
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  -webkit-animation: gradient 15s ease infinite;
-          animation: gradient 15s ease infinite;
 }
-@-webkit-keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.shop-border-grad {
+  border: 2px solid;
+  border-radius: 50px;
+  -o-border-image: linear-gradient(to right, green, yellow) 1;
+     border-image: linear-gradient(to right, green, yellow) 1;
 }
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.shop-font-italic {
+  font-style: italic;
 }/*# sourceMappingURL=shop.css.map */
