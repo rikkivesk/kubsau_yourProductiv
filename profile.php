@@ -83,7 +83,7 @@ foreach ($rows as $row) {
     <div class="container">
         <div class="footer-flexs">
             <div class="footer-flex item">
-                <a href="#" class="footer-flex-link">
+                <a href="shop.php" class="footer-flex-link">
                     <div class="footer-flex-span">
                         <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                              viewBox="0 0 489.4 489.4" style="enable-background:new 0 0 489.4 489.4;" xml:space="preserve">
@@ -114,7 +114,7 @@ foreach ($rows as $row) {
                 </a>
             </div>
             <div class="footer-flex item --active">
-                <a href="ava.html" class="footer-flex-link">
+                <a href="ava.php" class="footer-flex-link">
                         <span class="footer-flex-span">
                             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                  viewBox="0 0 482.9 482.9" style="enable-background:new 0 0 482.9 482.9;" xml:space="preserve">
