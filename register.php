@@ -11,16 +11,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Регистрация</title>
+    <title>Авторизация и регистрация</title>
     <link rel="stylesheet" href="./scss/register.css">
 </head>
 <body>
+<?php
+
+?>
     <!-- Форма регистрации
         если пользователь зарегистрирован, то покажи форму авторизации
         если пользователь не зарегистрирован, покажи форму регистрации
     -->
 
-    <form class='form_reg' action="vendor/signup.php" method="post" enctype="multipart/form-data">
+    <form action="vendor/signup.php" method="post" enctype="multipart/form-data">
         <label>ФИО</label>
         <input type="text" name="full_name" placeholder="Введите свое полное имя">
         <label>Логин</label>

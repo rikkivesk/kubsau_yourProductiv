@@ -58,11 +58,13 @@ require_once 'vendor/connect.php';
             </div>
         </div>
     </header>
-    <main>
+    <main class="<?= $_SESSION['user']['classes']?>">
         <form class="main-form">
             <img class="main-form-img" src="<?= $_SESSION['user']['avatar'] ?>" width="200" alt="">
             <h2 style="margin: 10px 0;"><?= $_SESSION['user']['login'] ?></h2>
             <a href="#"><?= $_SESSION['user']['email'] ?></a>
+            <?= $_SESSION['user']['classes']?>
+
             <a href="vendor/logout.php" class="logout">Выход</a>
         </form>
         <div class="rating">

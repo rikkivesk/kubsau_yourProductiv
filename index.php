@@ -59,7 +59,7 @@
             </div>
         </div>
     </header>
-    <main class="main">
+    <main class="<?= $_SESSION['user']['classes']?> main">
         <div class="container">
             <div class="app content --active">
                 <div class="app-slider-popup">
@@ -182,7 +182,7 @@
                     </a>
                 </div>
                 <div class="footer-flex item --active">
-                    <a href="index.html" class="footer-flex-link">
+                    <a href="index.php" class="footer-flex-link">
                         main
                     </a>
                 </div>

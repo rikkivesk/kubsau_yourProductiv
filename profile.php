@@ -58,13 +58,16 @@ require_once 'vendor/connect.php';
         </div>
     </div>
 </header>
-<main>
-    <form class="main-form">
-        <?php
-        $id = $_GET['id'];
-        $result = mysqli_query($connect, "SELECT  login, avatar FROM `users` where id = $id");
-        $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
-        ?>
+<?php
+$id = $_GET['id'];
+$result = mysqli_query($connect, "SELECT  login, avatar, classes FROM `users` where id = $id");
+
+$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+foreach ($rows as $row) {
+    $row['classes'];
+}
+?>
+<main class="<?= $row['classes']?>">
         <?php
         foreach ($rows as $row){
         ?>
@@ -73,7 +76,6 @@ require_once 'vendor/connect.php';
             <p><?= $row['login']?></p>
         </div><?php
         } ?>
-    </form>
 
 </main>
 

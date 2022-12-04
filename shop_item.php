@@ -11,7 +11,8 @@ require_once 'vendor/connect.php';
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <title>items</title>
     <link rel="stylesheet" href="./scss/reset.css">
-    <link rel="stylesheet" href="./scss/shop.css">
+    <link rel="stylesheet" href="./plugins/slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="./plugins/slick-1.8.1/slick/slick-theme.css">
     <link rel="stylesheet" href="./scss/main.css">
 </head>
 <body>
@@ -23,12 +24,12 @@ require_once 'vendor/connect.php';
          */
         // var_dump( $_GET ? $_GET : 'ничего нет');
         $id = $_GET['id'];
-        $result = mysqli_query($connect, "SELECT name_item, price FROM `shop_items` where id_category = $id");
+        $result = mysqli_query($connect, "SELECT id_shop_item, name_item, price, class FROM `shop_items` where id_category = $id");
         $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
         foreach ($rows as $row){
             ?>
-            <div class="shop-category-item">
-            <p><?= $row['name_item']?> цена:  <?= $row['price']?></p>
+            <div class="shop_category">
+            <a href="vendor/shopFunc.php?class=<?=$row['class'] ?>"><p><?= $row['name_item']?> цена:  <?= $row['price']?></p></a>
             </div><?php
         }?>
 

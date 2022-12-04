@@ -17,7 +17,8 @@
             "full_name" => $user['full_name'],
             "avatar" => $user['avatar'],
             "email" => $user['email'],
-            "balls" => $user['balls']
+            "balls" => $user['balls'],
+            "classes" => $user['classes']
         ];
 
         header('Location: ../ava.php');
