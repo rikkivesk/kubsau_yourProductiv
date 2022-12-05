@@ -138,10 +138,14 @@
                     </div>
                 </div>
                 <div class="task-input">
-                    <input type="text" id="add-task" name="todo" placeholder="Введите задачу..." value="">
+                    <form action="vendor/todo.php" method="post">
+                        <input type="text" id="add-task" name="todo" placeholder="Введите задачу..." value="">
+                        <input type="submit" >
+                    </form>
+
                     <div class="flex-button">
-                        <input type="button" value="➕" name='add' id="add-btn" title="Добавить задачу">
-                        <input type="button" value="❌" name='delete' id="del-btn" title="Очистить">
+                        <input type="submit" value="➕" name='add' id="add-btn" title="Добавить задачу">
+                        <input type="submit" value="❌" name='delete' id="del-btn" title="Очистить">
                     </div>
                 </div>
                 <div class="input-alert"></div>

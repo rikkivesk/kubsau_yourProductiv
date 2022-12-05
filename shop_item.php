@@ -28,7 +28,7 @@ require_once 'vendor/connect.php';
         foreach ($rows as $row){
             ?>
             <div class="shop-category <?=$row['class'] ?>">
-                <a href="vendor/shopFunc.php?class=<?=$row['class'] ?>" class="shop-category-link">
+                <a href="vendor/shopFunc.php?class=<?=$row['class'] ?>&price=<?=$row['price']?>" class="shop-category-link">
                 <p><?= $row['name_item']?></p>
                 <p>цена:  <?= $row['price']?></p>
             </a>

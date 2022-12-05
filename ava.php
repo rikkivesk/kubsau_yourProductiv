@@ -71,7 +71,7 @@ require_once 'vendor/connect.php';
             <h2 class="rating-title">Рейтинг пользователей</h2>
             <?php
             // вывод пользователей до 10 штук
-            $result = mysqli_query($connect, "SELECT id, login, avatar, balls FROM `users` LIMIT 3");
+            $result = mysqli_query($connect, "SELECT id, login, avatar, balls FROM `users` ORDER BY balls DESC LIMIT 3 ");
             $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
             foreach ($rows as $row) {
                 ?>
