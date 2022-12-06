@@ -19,7 +19,21 @@ if ($price_item <= $price and $price != 0) {
 // mysqli_query($connect, "select * from users where id = '$id'");
         $price -= $price_item;
         mysqli_query($connect, "update users set balls='$price' where id = '$id'");
-        header('Location: ../vendor/signin.php');
+        $check_user = mysqli_query($connect, "SELECT * FROM `users` WHERE id = '$id'");
+
+        $user = mysqli_fetch_assoc($check_user);
+
+        $_SESSION['user'] = [
+            "id" => $user['id'],
+            "login" => $user['login'],
+            "full_name" => $user['full_name'],
+            "avatar" => $user['avatar'],
+            "email" => $user['email'],
+            "balls" => $user['balls'],
+            "classes" => $user['classes']
+        ];
+        header('Location: ../index.php');
+        //header('Location: ../vendor/signin.php');
     }
 
 }else{
