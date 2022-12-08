@@ -34,26 +34,17 @@ addBtn.addEventListener('click', (e)=> { // функция добавления 
 })
 function addTodo(todo){ //функция создания задачи
     let todoTask  = ` 
-                <div class="task">
-					<input type="text" id="added-task" name='todo' disabled value="${todo}">
-                    <input type="button" value="✔️" name='ready' title='Закончить задачу' class="ready-task">
+                <form method="post" class="task" action="vendor/todo.php">
+					<input type="text" id="added-task" name='to' disabled value="${todo}">
+                    <input type="submit" name='todo' title='Закончить задачу' class="ready-task">
                     <div>
                         <input type="button" value="&#9997;" name='update' title='Редактировать задачу' class="update-task">
                         <input type="button" value="✏️" name='rename' title='Переимоновать задачу' class="rename-task">
                         <input type="button" value="❌" name='delete' title='Удалить задачу' class="del-task">
                     </div>
-                </div>
+                </form>
                 ` 
     newTasks.innerHTML += todoTask // добавляем в поле новых задач
-    /*$.ajax({
-        url: 'vendor/todo.php',
-        method: 'post',
-        dataType: 'html',
-        data: {numberMoney: 'numberMoney'},
-        success: function(data){
-            alert(data);
-        }
-    });*/
 }
 function updateTodo(){ //функция изменения задачи
     let task  = document.querySelectorAll('.task') //берем массив с заданиями
@@ -76,11 +67,6 @@ function updateTodo(){ //функция изменения задачи
                     t.children[0].disabled = true
                     // countMoney.textContent += 1
                 }
-            }
-            else if (e.target.classList.contains('ready-task')){//выполнил задание
-                numberMoney++ //прибавление монет
-                countMoney.innerHTML = numberMoney //начисление монет
-                t.remove()
             }
         })
     }) 
