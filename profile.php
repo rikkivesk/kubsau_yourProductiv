@@ -61,14 +61,16 @@ require_once 'vendor/connect.php';
 </header>
 <?php
 $id = $_GET['id'];
-$result = mysqli_query($connect, "SELECT  login, avatar, classes, balls FROM `users` where id = $id");
+$result = mysqli_query($connect, "SELECT  login, avatar, classes_background, classes_fonts, classes_border, balls FROM `users` where id = $id");
 
 $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
 foreach ($rows as $row) {
-    $row['classes'];
+    $row['classes_background'];
+    $row['classes_fonts'];
+    $row['classes_border'];
 }
 ?>
-<main class="<?= $row['classes']?>">
+<main class="<?= $row['classes_background']?> <?= $row['classes_fonts']?> <?= $row['classes_border']?>">
         <?php
         foreach ($rows as $row){
         ?>

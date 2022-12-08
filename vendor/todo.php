@@ -18,9 +18,9 @@ $id = $_SESSION['user']['id'];
 $postTodo = $_POST['todo'];
 if (isset($postTodo)){
     $price += 50;
-    mysqli_query($connect, "update users set balls='$price' where id = '$id'");
+    mysqli_query($connect, "insert into works(todo, id_users) values('$postTodo', '$id')");
     unset($postTodo);
-
+    mysqli_query($connect, "update users set balls=$price where id ='$id'");
     $check_user = mysqli_query($connect, "SELECT * FROM `users` WHERE id = '$id'");
 
     $user = mysqli_fetch_assoc($check_user);
@@ -32,7 +32,33 @@ if (isset($postTodo)){
         "avatar" => $user['avatar'],
         "email" => $user['email'],
         "balls" => $user['balls'],
-        "classes" => $user['classes']
+        "classes_background" => $user['classes_background'],
+        "classes_fonts" => $user['classes_fonts'],
+        "classes_border" => $user['classes_border']
+
     ];
+/*
+ * как-то подцепиться на кнопку добавить задачу.
+ * и когда задача появляется в списке дел, она добавляется в базу данных
+ * потом подцепиться на кнопки завершения дел, удаление, изменение.
+ * то все эти кнопки будут делать разные функции.
+ * завершение - удаляет из базы данных дело и прибавляет баллы
+ * изменение - sql запрос update
+ * удаление - sql запрос delete
+    $check_user = mysqli_query($connect, "SELECT * FROM `users` WHERE id = '$id'");
+
+    $user = mysqli_fetch_assoc($check_user);
+
+    $_SESSION['user'] = [
+        "id" => $user['id'],
+        "login" => $user['login'],
+        "full_name" => $user['full_name'],
+        "avatar" => $user['avatar'],
+        "email" => $user['email'],
+        "balls" => $user['balls'],
+        "classes-background" => $user['classes-background'],
+        "classes-fonts" => $user['classes-fonts'],
+        "classes-border" => $user['classes-border']
+    ];*/
     header('Location: ../index.php');
 }

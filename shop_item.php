@@ -23,12 +23,12 @@ require_once 'vendor/connect.php';
          */
         // var_dump( $_GET ? $_GET : 'ничего нет');
         $id = $_GET['id'];
-        $result = mysqli_query($connect, "SELECT id_shop_item, name_item, price, class FROM `shop_items` where id_category = $id");
+        $result = mysqli_query($connect, "SELECT * FROM `shop_items` where id_category = $id");
         $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
         foreach ($rows as $row){
             ?>
-            <div class="shop-category <?=$row['class'] ?>">
-                <a href="vendor/shopFunc.php?class=<?=$row['class'] ?>&price=<?=$row['price']?>" class="shop-category-link">
+        <div class="shop-category <?=$row['class'] ?>">
+            <a href="vendor/shopFunc.php?id_category=<?=$row['id_category']?>&price=<?=$row['price']?>&class=<?= $row['class']?>" class="shop-category-link">
                 <p><?= $row['name_item']?></p>
                 <p>цена:  <?= $row['price']?></p>
             </a>

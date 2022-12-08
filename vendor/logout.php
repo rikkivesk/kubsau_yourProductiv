@@ -1,4 +1,4 @@
 <?php
 session_start();
 unset($_SESSION['user']);
-header('Location: ../register.php');
+header('Location: ../ava.php');

@@ -18,7 +18,10 @@
             "avatar" => $user['avatar'],
             "email" => $user['email'],
             "balls" => $user['balls'],
-            "classes" => $user['classes']
+            "classes_background" => $user['classes_background'],
+            "classes_fonts" => $user['classes_fonts'],
+            "classes_border" => $user['classes_border']
+
         ];
 
         header('Location: ../ava.php');

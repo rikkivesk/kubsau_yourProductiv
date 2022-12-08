@@ -192,13 +192,6 @@ body {
   font-size: 16px;
 }
 
-.btn-send {
-  padding: 6px;
-  background: #EDAFB8;
-  border: none;
-  font-size: 16px;
-}
-
 .content {
   display: none;
 }
@@ -206,7 +199,7 @@ body {
   display: block;
 }
 
-.nav-item.--active {
+.item.--active {
   border-bottom: 2px solid blue;
 }
 
@@ -255,7 +248,6 @@ body {
 
 input {
   border: none;
-  background: #000;
 }
 input[type=text] {
   width: 50%;

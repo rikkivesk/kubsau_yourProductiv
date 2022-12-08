@@ -29,7 +29,15 @@
                     Твой продуктив
                 </h1>
                 <div class="header-coins">
-                    <p class="header-coins-count"><?= $_SESSION['user']['balls']?></p>
+                    <p class="header-coins-count">
+                        <?php
+                        if (isset($_SESSION['user'])) {
+                            echo $_SESSION['user']['balls'];
+                        }else{
+                            echo '0';
+                        }
+                        ?>
+                    </p>
                     <span class="header-coins-span">
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 463 463" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 463 463">
                             <g>
@@ -59,7 +67,7 @@
             </div>
         </div>
     </header>
-    <main class="<?= $_SESSION['user']['classes']?> main">
+    <main class="<?= $_SESSION['user']['classes_background']?> <?= $_SESSION['user']['classes_fonts']?> <?= $_SESSION['user']['classes_border']?> main">
         <div class="container">
             <div class="app content --active">
                 <div class="app-slider-popup">
@@ -140,7 +148,7 @@
                 <div class="task-input">
                     <form action="vendor/todo.php" method="post">
                         <input type="text" id="add-task" name="todo" placeholder="Введите задачу..." value="">
-                        <input type="submit" class="btn-send">
+                        <input type="submit" >
                     </form>
 
                     <div class="flex-button">
@@ -159,7 +167,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-flexs">
-                <div class="footer-flex nav-item">
+                <div class="footer-flex item">
                     <a href="shop.php" class="footer-flex-link">
                         <div class="footer-flex-span">
                             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -185,14 +193,12 @@
                         </div>
                     </a>
                 </div>
-                <div class="footer-flex nav-item --active">
+                <div class="footer-flex item --active">
                     <a href="index.php" class="footer-flex-link">
-                        <div class="footer-flex-span">
-                            <svg enable-background="new 0 0 32 32" id="Editable-line" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="  M27,29H5V17H3.235c-1.138,0-1.669-1.419-0.812-2.168L14.131,3.745c1.048-0.993,2.689-0.993,3.737,0l11.707,11.087  C30.433,15.58,29.902,17,28.763,17H27V29z" fill="none" id="XMLID_1_" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/><path d="  M20,29h-8v-6c0-2.209,1.791-4,4-4h0c2.209,0,4,1.791,4,4V29z" fill="none" id="XMLID_2_" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/></svg>
-                        </div>
+                        main
                     </a>
                 </div>
-                <div class="footer-flex nav-item">
+                <div class="footer-flex item">
                     <a href="ava.php" class="footer-flex-link">
                         <span class="footer-flex-span">
                             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
