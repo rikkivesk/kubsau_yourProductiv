@@ -3,7 +3,7 @@ body {
   background: #B0C4B1;
   font-family: "Ubuntu", sans-serif;
   margin: 0 auto;
-  padding-bottom: 60px;
+  padding-bottom: 40px;
 }
 
 .owner {
@@ -21,7 +21,7 @@ body {
   width: 150px;
   height: 150px;
   margin: 0 auto;
-  border: 1px solid rgb(175, 20, 20);
+  border: 1px solid #af1414;
 }
 .owner-mail {
   text-decoration: none;
@@ -68,4 +68,4 @@ body {
   justify-content: center;
   font-size: 16px;
   font-weight: bold;
-}/*# sourceMappingURL=ava.css.map */
+}

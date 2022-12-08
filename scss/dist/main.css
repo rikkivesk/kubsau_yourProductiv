@@ -21,14 +21,7 @@
   margin-top: -35px;
   margin-left: -35px;
   text-align: center;
-  -webkit-animation: preloader-rotate 2s infinite linear;
-          animation: preloader-rotate 2s infinite linear;
-}
-
-@-webkit-keyframes preloader-rotate {
-  100% {
-    transform: rotate(360deg);
-  }
+  animation: preloader-rotate 2s infinite linear;
 }
 
 @keyframes preloader-rotate {
@@ -192,13 +185,6 @@ body {
   font-size: 16px;
 }
 
-.btn-send {
-  padding: 6px;
-  background: #EDAFB8;
-  border: none;
-  font-size: 16px;
-}
-
 .content {
   display: none;
 }
@@ -206,7 +192,7 @@ body {
   display: block;
 }
 
-.nav-item.--active {
+.item.--active {
   border-bottom: 2px solid blue;
 }
 
@@ -221,7 +207,7 @@ body {
   position: absolute;
   width: 100%;
   height: 3px;
-  background-color: rgb(0, 0, 0);
+  background-color: black;
   transition: all 0.3s ease;
 }
 .burger-span {
@@ -263,7 +249,7 @@ input[type=text] {
   outline: none;
   font-size: 1.2rem;
   margin-right: -4px;
-  color: rgb(0, 0, 0);
+  color: black;
   border: none;
   background-color: #ffffff;
   cursor: pointer;
@@ -312,7 +298,7 @@ input[type=button]:active {
 }
 
 .ready-task {
-  background-color: rgb(83, 174, 93);
+  background-color: #53ae5d;
 }
 
 .task {
@@ -355,16 +341,19 @@ input[type=button]:active {
   .header-title {
     font-size: 24px;
   }
+
   .app-slider-time {
     width: 150px;
     height: 150px;
   }
+
   .slick-next {
     margin-right: 20px;
   }
   .slick-prev {
     margin-left: 20px;
   }
+
   .new-tasks {
     max-height: 155px;
   }
@@ -377,6 +366,7 @@ input[type=button]:active {
     width: 26px;
     height: 26px;
   }
+
   .app-sliders {
     display: flex;
     justify-content: center;
@@ -396,10 +386,12 @@ input[type=button]:active {
     font-size: 14px;
     padding: 12px;
   }
+
   .btn-start, .btn-stop, .btn-reset {
     padding: 4px;
     font-size: 14px;
   }
+
   .burger-span {
     top: 16px;
   }
@@ -412,6 +404,7 @@ input[type=button]:active {
   .burger:before {
     bottom: 12px;
   }
+
   input[type=text] {
     padding: 5px;
     font-size: 1.05rem;
@@ -423,20 +416,25 @@ input[type=button]:active {
   input[type=button]:active {
     transform: scale(0.94);
   }
+
   .new-tasks {
     max-height: 207px;
   }
+
   .update-task {
     max-width: 28px;
   }
+
   .rename-task {
     background-color: #e9adad;
     max-width: 28px;
   }
+
   .del-task {
     background-color: #540a0a;
     max-width: 28px;
   }
+
   .task {
     width: 95%;
     margin: 5px auto;
@@ -444,10 +442,11 @@ input[type=button]:active {
   .task-input {
     margin: 10px auto 5px;
   }
+
   .slick-next {
     margin-right: 10px;
   }
   .slick-prev {
     margin-left: 10px;
   }
-}/*# sourceMappingURL=main.css.map */
+}
