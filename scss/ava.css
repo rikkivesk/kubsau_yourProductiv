@@ -5,6 +5,20 @@ body {
   margin: 0 auto;
 }
 
+.ava {
+  display: flex;
+  justify-content: center;
+}
+.ava-link {
+  text-decoration: none;
+  color: #111;
+  font-weight: bold;
+  margin: 8px;
+}
+.ava-link:hover {
+  text-decoration: underline;
+}
+
 .owner {
   border: 2px solid #111;
   border-radius: 8px;

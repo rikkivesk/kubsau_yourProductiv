@@ -5,6 +5,19 @@ body{
     font-family: 'Ubuntu', sans-serif;
     margin: 0 auto;
 }
+.ava{
+    display: flex;
+    justify-content: center;
+    &-link{
+        text-decoration: none;
+        color:#111;
+        font-weight: bold;
+        margin: 8px;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
 .owner{
     border: 2px solid #111;
     border-radius: 8px;

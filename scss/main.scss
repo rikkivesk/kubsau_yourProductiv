@@ -191,6 +191,13 @@ body{
     border: none;
     font-size: 16px;
 }
+.btn-send{
+    padding: 6px;
+    // background: #4676D7;
+    background: #EDAFB8;
+    border: none;
+    font-size: 16px;
+}
 .content{
     display: none;
     &.--active{
@@ -198,9 +205,9 @@ body{
     }
 }
 .item{
-    &.--active {
-        border-bottom: 2px solid blue;
-    }
+    // &.--active {
+    //     border-bottom: 2px solid blue;
+    // }
 }
 
 
@@ -304,6 +311,7 @@ input{
 }
 .ready-task{
     background-color: rgb(83, 174, 93);
+    padding: 4px;
 }
 .task{
     width: 91%;

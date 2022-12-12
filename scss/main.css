@@ -192,15 +192,18 @@ body {
   font-size: 16px;
 }
 
+.btn-send {
+  padding: 6px;
+  background: #EDAFB8;
+  border: none;
+  font-size: 16px;
+}
+
 .content {
   display: none;
 }
 .content.--active {
   display: block;
-}
-
-.item.--active {
-  border-bottom: 2px solid blue;
 }
 
 .burger {
@@ -305,6 +308,7 @@ input[type=button]:active {
 
 .ready-task {
   background-color: rgb(83, 174, 93);
+  padding: 4px;
 }
 
 .task {
