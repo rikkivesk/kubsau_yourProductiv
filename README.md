@@ -1,2 +1,2 @@
 # kubsau_yourProductiv
-link to our product - http://c918975f.beget.tech
+link to our product - https://rikkivesk.store
